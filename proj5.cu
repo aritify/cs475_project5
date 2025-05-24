@@ -90,12 +90,12 @@ MonteCarlo( float *dvs, float *dths, float *dgs, float *dhs, float *dds, int *dh
 	// see if the ball doesn't even reach the cliff:
 	float t = -vy / ( 0.5*GRAVITY );
 	float x = vx * t;
-	if( ????? )
+	if( x <= g )
 	{
 		// see if the ball hits the vertical cliff face:
 		t = g / vx;
 		float y = vy*t + 0.5*GRAVITY*t*t;
-		if( ????? )
+		if( y <= h )
 		{
 			// the ball hits the upper deck:
 			float a = 0.5 * GRAVITY;
