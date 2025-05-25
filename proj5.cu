@@ -158,11 +158,11 @@ main( int argc, char* argv[ ] )
 	CudaCheckError( );
 
 	// copy host memory to the device:
-	cudaMemcpy( dvs,  hvs,  BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
-	cudaMemcpy( dths, hths, BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
-	cudaMemcpy( dgs,  hgs,  BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
-	cudaMemcpy( dhs,  hhs,  BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
-	cudaMemcpy( dds,  hds,  BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dvs,  hvs,  NUMTRIALS*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dths, hths, NUMTRIALS*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dgs,  hgs,  NUMTRIALS*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dhs,  hhs,  NUMTRIALS*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dds,  hds,  NUMTRIALS*sizeof(float), cudaMemcpyHostToDevice );
 	CudaCheckError( );
 
 	// setup the execution parameters:
@@ -204,7 +204,7 @@ main( int argc, char* argv[ ] )
 	double megaTrialsPerSecond = trialsPerSecond / 1000000.;
 
 	// copy result from the device to the host:
-	cudaMemcpy( hhits, dhits, ?????, ????? );
+	cudaMemcpy( hhits, dhits, NUMTRIALS*sizeof(int), cudaMemcpyDeviceToHost );
 	CudaCheckError( );
 
 	// compute the sum :
