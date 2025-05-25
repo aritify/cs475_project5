@@ -158,11 +158,11 @@ main( int argc, char* argv[ ] )
 	CudaCheckError( );
 
 	// copy host memory to the device:
-	cudaMemcpy( dvs,  hvs,  ?????, ????? );
-	cudaMemcpy( dths, hths, ?????, ????? );
-	cudaMemcpy( dgs,  hgs,  ?????, ????? );
-	cudaMemcpy( dhs,  hhs,  ?????, ????? );
-	cudaMemcpy( dds,  hds,  ?????, ????? );
+	cudaMemcpy( dvs,  hvs,  BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dths, hths, BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dgs,  hgs,  BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dhs,  hhs,  BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
+	cudaMemcpy( dds,  hds,  BLOCKSIZE*sizeof(float), cudaMemcpyHostToDevice );
 	CudaCheckError( );
 
 	// setup the execution parameters:
