@@ -46,7 +46,7 @@ const float DMIN  =	10.0;	// distance to castle in meters
 const float DMAX  =	20.0;	// distance to castle in meters
 const float VMIN  =	10.0;	// intial cnnonball velocity in meters / sec
 const float VMAX  =	30.0;	// intial cnnonball velocity in meters / sec
-const float THMIN = 70.0;	// cannonball launch angle in degrees
+const float THMIN = 	70.0;	// cannonball launch angle in degrees
 const float THMAX =	80.0;	// cannonball launch angle in degrees
 
 // constants:
