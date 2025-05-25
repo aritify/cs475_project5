@@ -204,7 +204,7 @@ main( int argc, char* argv[ ] )
 	double megaTrialsPerSecond = trialsPerSecond / 1000000.;
 
 	// copy result from the device to the host:
-	cudaMemcpy( hhits, dhits, NUMTRIALS*sizeof(int), cudaMemcpyDeviceToHost );
+	cudaMemcpy( hhits, dhits, sizeof(hhits), cudaMemcpyDeviceToHost );
 	CudaCheckError( );
 
 	// compute the sum :
